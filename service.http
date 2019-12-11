@@ -1,0 +1,20 @@
+POST http://localhost/textmagic/indexsms.php HTTP/1.1
+Content-Type: application/json
+
+{
+    "celular" : "59179676381",
+    "token" : "22232"
+}
+
+###
+
+GET http://192.168.0.12/API_REST_ALMULINE/token/read.php HTTP/1.1
+ 
+###
+
+
+GET http://apialmuline.fast-page.org/API_REST_ALMULINE/menu/read.php
+
+###
+
+DELETE  http://192.168.0.12/API_REST_ALMULINE/token/delete.php/?id=4 HTTP/1.1

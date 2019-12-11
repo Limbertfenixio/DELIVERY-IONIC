@@ -1,0 +1,191 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="start" size="large" (click)="diss()" color="light" fill="clear">
+      <ion-icon name="arrow-back" color="dark"></ion-icon>
+    </ion-button>
+    <ion-title>Pedidos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [scrollEvents]="true">
+    <ion-card>
+
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="assets/logo1.jpg">
+          </ion-avatar>
+          <h2>AlmuLine</h2>
+        </ion-item>
+
+        <ion-card-content>
+          <p>Estimado cliente {{cli}} que desea pedir.:</p>
+        </ion-card-content>
+      
+        <ion-row>
+            <ion-col size="6" style="padding:0">
+              <ion-button  small expand="block" (click)="menu(1)" color="danger">
+                <ion-icon name="restaurant" class="icon"></ion-icon> Almuerzo
+              </ion-button>
+            </ion-col>
+            <ion-col size="6" style="padding:0">
+              <ion-button  small expand="block" (click)="menu(2)" color="danger">
+                <ion-icon name="leaf" class="icon"></ion-icon> Vegetariano
+              </ion-button>
+            </ion-col >
+          </ion-row>
+    </ion-card>
+
+    <ion-card *ngIf="vmenu==true">
+
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="assets/logo1.jpg">
+          </ion-avatar>
+          <h2>AlmuLine</h2>
+        </ion-item>
+
+        <ion-card-content>
+          <ion-radio-group>
+            <ion-row>
+              <ion-col size="4" align-self-center text-center style="padding:0;">
+                <ion-label>Almuerzo Completo</ion-label>
+              </ion-col>
+            <ion-col size="4" align-self-center text-center style="padding:0;">
+                <ion-label>Sopa Suelta</ion-label>
+            </ion-col>
+            <ion-col size="4" align-self-center text-center style="padding:0;">
+                <ion-label>Segundo Suelto</ion-label>
+            </ion-col>
+
+            </ion-row>
+            <ion-row>
+              <ion-col size="4" align-self-center text-center style="padding:0;" >
+                <ion-radio color="danger" (click)="almuerzo()" checked></ion-radio>
+            </ion-col>
+            <ion-col size="4" align-self-center text-center style="padding:0;">
+                <ion-radio color="danger" (click)="sopa()"></ion-radio>
+            </ion-col>
+            <ion-col size="4" align-self-center text-center style="padding:0;">
+                <ion-radio color="danger" (click)="segundo()"></ion-radio>
+            </ion-col>
+
+            </ion-row>
+          </ion-radio-group>
+          <p>Nuestro menu de hoy es.</p>
+          <img src="{{linkImage}}" (click)="preview('menuBlanco.png')">
+
+          <ion-row>
+            <ion-col size="7" align-self-center text-center>
+                <p>Cuantos vas a ordenar.</p>
+            </ion-col>
+            <ion-col size="2">
+              <ion-button size="small" class="but" (click)="cont(0)" fill="outline" color="danger" expand="full"><ion-icon name="remove"></ion-icon></ion-button>
+            </ion-col>
+            <ion-col class="ion-cont" size="1" style="padding:0;" align-self-center text-center>
+                <ion-input type="number" inputmode="tel" maxlength="3" value="{{cant}}" readonly></ion-input>
+            </ion-col>
+            <ion-col size="2">
+              <ion-button size="small" class="but" (click)="cont(1)" fill="outline" color="danger" expand="full"><ion-icon name="add"></ion-icon></ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngIf="seg==true">
+            <ion-col size="12">
+              <ion-item>
+                <ion-label>Seleccione el segundo</ion-label>
+                <ion-select placeholder="Seleccione">
+                  <div style="display:none" *ngFor="let i of dataPlatosSeg">
+                      <!--<ion-select-option value="{{i.idplato}}"  *ngIf="i.tipo == 'Segundos'"><span>{{i.nombre}}</span></ion-select-option>-->
+                    <ion-select-option *ngIf="i.nombre != ''">{{i.nombre}}</ion-select-option>
+                  </div>       
+                </ion-select>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row *ngIf="sop==true">
+            <ion-col size="12">
+              <ion-item>
+                <ion-label>Seleccione la sopa</ion-label>
+                <ion-select placeholder="Seleccione">
+                    <div style="display:none" *ngFor="let i of dataPlatosSop">
+                      <ion-select-option *ngIf="i.nombre != ''">{{i.nombre}}</ion-select-option>
+                       <!-- <ion-select-option value="{{i.idplato}}"  *ngIf="i.tipo == 'Sopas'"><span>{{i.nombre}}</span></ion-select-option>-->
+                    </div> 
+                </ion-select>
+              </ion-item>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col size="12">
+                <ion-input type="text" placeholder="Ingrese algun detalle extra" [(ngModel)]="descrip" class="cli"></ion-input>
+            </ion-col>
+          </ion-row>
+        </ion-card-content>
+      
+        <ion-row>
+          <ion-col>
+            <ion-button expand="full" (click)="orden()" color="danger"><ion-icon name="cart" class="icon"></ion-icon> Ordenar</ion-button>
+          </ion-col>
+        </ion-row>
+    </ion-card>
+
+    <ion-card *ngIf="vdat==true">
+
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="assets/logo1.jpg">
+          </ion-avatar>
+          <h2>AlmuLine</h2>
+        </ion-item>
+
+        <ion-card-content>
+          <p>Por favor llene los siguientes datos para realizar el envio de su pedido.</p>
+        </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="vdat==true">
+
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="assets/logo1.jpg">
+          </ion-avatar>
+          <h2>Cliente : </h2>
+        </ion-item>
+
+        <ion-card-content>
+
+          <ion-row>
+            <ion-col> 
+                <p>Enviar mi pedido a nombre de </p><ion-input type="text" class="cli" autofocus="true" placeholder="Escriba su nombre aqui" [(ngModel)]="cli" value="{{cli}}"></ion-input><p> el numero de contacto es:</p><ion-input type="text" value="{{tel}}" placeholder="Escriba el numero de contacto" class="cli" [(ngModel)]="tel"></ion-input>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col>
+                <p>La direccion del envio es:</p><ion-input type="text" class="cli"  placeholder="Escriba la direccion exacta de envio" [(ngModel)]="dir" value={{dir}}></ion-input>
+            </ion-col>
+          </ion-row>
+
+        </ion-card-content>
+      
+        <ion-row>
+          <ion-col>
+            <ion-button expand="full" (click)="maps()" color="danger"><ion-icon name="pin" class="icon"></ion-icon> Envienos su ubicacion </ion-button>
+          </ion-col>
+        </ion-row>        
+
+        <ion-row>
+          <ion-col>
+            
+          </ion-col>
+        </ion-row>
+    </ion-card>
+
+    <div *ngIf="vdat==true" #map id="map_canvas"></div> 
+
+    <ion-card *ngIf="vdat==true">
+      <ion-button expand="full" (click)="confirm()" color="danger"><ion-icon name="thumbs-up" class="icon"></ion-icon> Confirmar mis datos</ion-button>
+    </ion-card>
+    
+    
+</ion-content>
+

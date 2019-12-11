@@ -1,0 +1,57 @@
+.text-center{
+    text-align : center;
+}
+
+#map_canvas {
+    width: 90%;
+    height: 46%;
+    display: block;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+*{
+    font-size : 16px;   
+}
+
+::ng-deep .mat-horizontal-stepper-header{
+    pointer-events: none !important;
+    box-sizing: border-box;
+    max-height: 40px;
+}
+
+::ng-deep .mat-step-body{
+    pointer-events: none !important;
+    max-height: 5%;
+}
+
+::ng-deep .mat-step-icon{
+    background-color: red !important;
+    color: white !important;
+}
+
+::ng-deep .mat-step-icon-selected{
+    background-color: lime !important;
+    color: white !important;
+}
+
+#m2{
+    
+    margin-left: 20%;
+}
+
+#m3{
+    margin-left: 40%;
+}
+
+#m4{
+    margin-left: 50%;
+}
+
+#m5{
+    margin-left: 75%;
+}
+
+#estado{
+   margin-top: -30px;
+}
+

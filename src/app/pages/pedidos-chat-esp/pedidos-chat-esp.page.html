@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-button slot="start" size="large" (click)="diss()" color="light" fill="clear">
+      <ion-icon name="arrow-back" color="dark"></ion-icon>
+    </ion-button>
+    <ion-title>Pedidos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [scrollEvents]="true">
+  <ion-card>
+        <ion-item>
+          <ion-avatar item-start>
+            <img src="assets/logo1.jpg">
+          </ion-avatar>
+          <h2>AlmuLine</h2>
+        </ion-item>
+
+        <ion-card-content>
+          <p>Estimado cliente {{cli}} que desea pedir.:</p>
+        </ion-card-content>
+      
+        <ion-row>
+            <ion-col size="9" style="padding:0">
+              <ion-searchbar placeholder="Busque su plato favorito" animated color="white"></ion-searchbar>
+            </ion-col>
+            <ion-col size="3" style="padding:0">
+              <ion-button  clear small (click)="menu(2)">
+                <div>Buscar</div>
+              </ion-button>
+            </ion-col>
+        </ion-row>
+    </ion-card>
+</ion-content>

@@ -1,0 +1,28 @@
+<ion-card style="max-height: 300px;">
+
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="assets/logo1.jpg">
+      </ion-avatar>
+      <h2>AlmuLine</h2>
+    </ion-item>
+  
+    <ion-card-content>
+      <p>Su pedido es el Nro: <b>{{np}}</b>, puede realizar el seguimiento del mismo desde el menu principal de la aplicación Click aquí.</p>
+      <p>      <br></p>
+      <p>Va realizar el pago en?</p>
+    </ion-card-content>
+  
+    <ion-row>
+        <ion-col size="5">
+          <ion-button color="danger" (click)="efectivo()" size="small" expand="full"><ion-icon name="cash" class="icon"></ion-icon>Efectivo</ion-button> 
+        </ion-col>
+        <ion-col size="3">
+          <ion-button color="danger" (click)="qr()" size="small" expand="full"><ion-icon name="qr-scanner" class="icon"></ion-icon>QR</ion-button>
+        </ion-col >
+        <ion-col size="4">
+          <ion-button color="danger" (click)="tarjeta()" size="small" expand="full"><ion-icon name="card" class="icon"></ion-icon>Tarjeta</ion-button>
+        </ion-col>
+    </ion-row>
+ </ion-card>
+

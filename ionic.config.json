@@ -1,0 +1,7 @@
+{
+  "name": "almuline",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

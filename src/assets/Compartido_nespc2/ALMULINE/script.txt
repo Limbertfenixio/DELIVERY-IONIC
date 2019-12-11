@@ -1,0 +1,6 @@
+ALTER TABLE `tblplatos` ADD `grupoProducto` VARCHAR(65) NOT NULL AFTER `Tipo`;
+ALTER TABLE `tblpedidos` ADD `DescriPedido` VARCHAR(85) NOT NULL AFTER `Producto`;
+
+
+
+INSERT INTO `tblempresas` (`idEmpresa`, `NombreRazonSocial`, `Direccion`, `Zona`, `Latitud`, `Longitud`, `Telefono`, `Estado`, `ServicioEmpresa`) VALUES (NULL, 'RESTAURANT PRIMAVERA', 'Av. Sanchez Lima N° 3467 Esq. 20 de Octubre', 'Sopocachi', '0.3465323234', '0.4534534534', '77523456', 'Abierto', 'ALMUERZO TRADICIONAL');

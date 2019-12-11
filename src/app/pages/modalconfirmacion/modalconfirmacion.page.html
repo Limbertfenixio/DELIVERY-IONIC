@@ -1,0 +1,16 @@
+<ion-card style="max-height: 300px;">
+
+  <ion-item>
+    <ion-avatar item-start>
+      <img src="assets/logo1.jpg">
+    </ion-avatar>
+    <h2>AlmuLine</h2>
+  </ion-item>
+
+  <ion-card-content>
+    <p class="text-center">Estimado cliente le acabamos de enviar un sms de confirmación porfavor introduzca el codigo.</p>
+    <ion-input type="number"  placeholder="Introduzca el codigo de confirmación" [(ngModel)]="codigoVerif" class="input"></ion-input>
+    <ion-button color="danger" (click)="confirmPedido()" expand="full"><ion-icon name=""></ion-icon>   Confirmar</ion-button> 
+  </ion-card-content>
+</ion-card>
+

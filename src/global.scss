@@ -1,0 +1,70 @@
+/*
+ * App Global CSS
+ * ----------------------------------------------------------------------------
+ * Put style rules here that you want to apply globally. These styles are for
+ * the entire app and not just one component. Additionally, this file can be
+ * used as an entry point to import other CSS/Sass files to be included in the
+ * output CSS.
+ * For more information on global stylesheets, visit the documentation:
+ * https://ionicframework.com/docs/layout/global-stylesheets
+ */
+
+/* Core CSS required for Ionic components to work properly */
+@import "~@ionic/angular/css/core.css";
+
+/* Basic CSS for apps built with Ionic */
+@import "~@ionic/angular/css/normalize.css";
+@import "~@ionic/angular/css/structure.css";
+@import "~@ionic/angular/css/typography.css";
+@import '~@ionic/angular/css/display.css';
+
+/* Optional CSS utils that can be commented out */
+@import "~@ionic/angular/css/padding.css";
+@import "~@ionic/angular/css/float-elements.css";
+@import "~@ionic/angular/css/text-alignment.css";
+@import "~@ionic/angular/css/text-transformation.css";
+@import "~@ionic/angular/css/flex-utils.css";
+
+
+.fu .modal-wrapper {
+    height: 100%;
+    width: 100%;
+    top: 0;
+    position: absolute; 
+    display: block;  
+ }
+ 
+
+ .modalpago .modal-wrapper{
+    background-color: rgba (0,0,0,0.7);
+    width: 80%;
+    max-height: 330px;
+    border-radius: 10%;  
+ }
+
+ .modaleleccion .modal-wrapper{
+   background-color: rgba (0,0,0,0.7);
+   width: 70%;
+   max-height: 375px;
+   border-radius: 10%; 
+}
+
+.modalconfirmacion .modal-wrapper{
+   background-color: rgba (0,0,0,0.7);
+   width: 70%;
+   max-height: 280px; 
+   border-radius: 10%; 
+}
+
+ion-alert {
+   &.alert-danger {
+       .alert-button{
+           background: var(--ion-color-danger);
+           color: #fff;
+           margin-botto: 10px;
+       }
+       .alert-input{
+         
+       }
+   }
+}
